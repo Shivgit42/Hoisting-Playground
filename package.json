@@ -1,6 +1,7 @@
 {
   "name": "hoist-playground",
   "private": true,
+  "description": "A simple sleek UI hoisting playground for understanding and mastering hoisting and execution of code in javascript",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
