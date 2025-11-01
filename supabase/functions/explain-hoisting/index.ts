@@ -87,7 +87,7 @@ Keep it educational and easy to understand.`,
       },
     );
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Handled Error:", error);
     return new Response(
       JSON.stringify({
         error: "Failed to generate explanation",
