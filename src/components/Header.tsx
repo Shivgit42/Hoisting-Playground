@@ -1,4 +1,4 @@
-import { Trophy, Zap } from "lucide-react";
+import { Trophy, Zap, Github, Star } from "lucide-react";
 
 interface HeaderProps {
   score: number;
@@ -7,8 +7,28 @@ interface HeaderProps {
 }
 
 export function Header({ score, totalAttempts, difficulty }: HeaderProps) {
+  const handleGitHubClick = () => {
+    window.open("https://github.com/Shivgit42/Hoisting-Playground", "_blank");
+  };
+
   return (
-    <header className="mb-6 md:mb-8">
+    <header className="mb-6 md:mb-8 relative">
+      {/* GitHub Star Button - Top Right Corner */}
+      <div className="flex justify-end mb-3 pt-2">
+        <button
+          onClick={handleGitHubClick}
+          className="group relative flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-all shadow-sm hover:shadow-mdc cursor-pointer"
+          aria-label="Star on GitHub"
+        >
+          <Github className="w-4 h-4" />
+          <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+          <span className="hidden sm:inline text-xs font-medium">
+            Star on GitHub
+          </span>
+        </button>
+      </div>
+
+      {/* Main Header Content */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg flex items-center justify-center">
@@ -27,7 +47,9 @@ export function Header({ score, totalAttempts, difficulty }: HeaderProps) {
             </p>
           </div>
         </div>
+
         <div className="flex items-center gap-2 sm:gap-4">
+          {/* Score Display */}
           <div className="bg-white px-3 sm:px-4 py-2 rounded-lg shadow-sm border border-gray-200">
             <div className="flex items-center gap-2">
               <Trophy className="w-4 h-4 text-yellow-500" />
@@ -36,6 +58,8 @@ export function Header({ score, totalAttempts, difficulty }: HeaderProps) {
               </span>
             </div>
           </div>
+
+          {/* Difficulty Badge */}
           <div className="bg-white px-3 sm:px-4 py-2 rounded-lg shadow-sm border border-gray-200">
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-orange-500" />
