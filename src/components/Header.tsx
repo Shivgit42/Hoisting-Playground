@@ -13,7 +13,6 @@ export function Header({ score, totalAttempts, difficulty }: HeaderProps) {
 
   return (
     <header className="mb-6 md:mb-8 relative">
-      {/* GitHub Star Button - Top Right Corner */}
       <div className="flex justify-end mb-3 pt-2">
         <button
           onClick={handleGitHubClick}
